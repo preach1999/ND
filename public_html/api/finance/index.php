@@ -142,6 +142,21 @@ function allRows(PDOStatement $statement): array {
     return array_map('normalized', $statement->fetchAll());
 }
 
+function calculatedOpeningBalance(PDO $pdo, string $period): int {
+    $firstPeriod = $pdo->query('SELECT period_key,opening_balance_centavos FROM monthly_periods ORDER BY period_key ASC LIMIT 1')->fetch();
+    if (!$firstPeriod || $period < (string)$firstPeriod['period_key']) {
+        throw new RuntimeException('The selected month is earlier than the first available financial period.');
+    }
+
+    $query = $pdo->prepare("SELECT
+        COALESCE(SUM(CASE WHEN type='sale' THEN amount_centavos ELSE 0 END),0) sales,
+        COALESCE(SUM(CASE WHEN type IN ('purchase','expense') THEN amount_centavos ELSE 0 END),0) outflows
+        FROM transactions WHERE transaction_date<? AND status='active'");
+    $query->execute([$period . '-01']);
+    $totals = $query->fetch() ?: ['sales'=>0,'outflows'=>0];
+    return (int)$firstPeriod['opening_balance_centavos'] + (int)$totals['sales'] - (int)$totals['outflows'];
+}
+
 function snapshot(PDO $pdo, string $period, array $configuration): array {
     $start = $period . '-01';
     $end = nextPeriod($period) . '-01';
@@ -163,7 +178,9 @@ function snapshot(PDO $pdo, string $period, array $configuration): array {
     $active = array_values(array_filter($transactions, fn(array $row): bool => $row['status'] === 'active'));
     $totals = ['sale'=>0,'purchase'=>0,'expense'=>0];
     foreach ($active as $row) $totals[$row['type']] += (int)$row['amount_centavos'];
-    $opening = (int)($month['opening_balance_centavos'] ?? 0);
+    $opening = $month['status'] === 'open'
+        ? calculatedOpeningBalance($pdo, $period)
+        : (int)($month['opening_balance_centavos'] ?? 0);
     $net = $totals['sale'] - $totals['purchase'] - $totals['expense'];
     return [
         'company'=>$configuration['company'], 'period'=>$month, 'periods'=>$periods,
@@ -187,7 +204,12 @@ function assertOpen(PDO $pdo, string $period): void {
     $query = $pdo->prepare('SELECT status FROM monthly_periods WHERE period_key=?');
     $query->execute([$period]);
     $status = $query->fetchColumn();
-    if ($status === false) throw new RuntimeException('The selected month has not been opened yet.');
+    if ($status === false) {
+        $opening = calculatedOpeningBalance($pdo, $period);
+        $pdo->prepare("INSERT INTO monthly_periods (period_key,label,opening_balance_centavos,status) VALUES (?,?,?,'open')")
+            ->execute([$period,periodDate($period)->format('F Y'),$opening]);
+        $status = 'open';
+    }
     if ($status !== 'open') throw new RuntimeException('This month is already closed.');
 }
 
