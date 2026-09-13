@@ -1,0 +1,517 @@
+{
+  "openingBalanceCentavos": 154627454,
+  "transactions": [
+    [
+      "2026-08-01",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8865700,
+      9
+    ],
+    [
+      "2026-08-01",
+      "expense",
+      "Payroll",
+      "Payroll",
+      2233523,
+      10
+    ],
+    [
+      "2026-08-02",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8860700,
+      24
+    ],
+    [
+      "2026-08-03",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      9020700,
+      25
+    ],
+    [
+      "2026-08-04",
+      "expense",
+      "Fuel / Transportation",
+      "Gasoline going to Oz",
+      100000,
+      27
+    ],
+    [
+      "2026-08-04",
+      "purchase",
+      "Fuel Products",
+      "Sea Oil Phil. Inc",
+      99883340,
+      28
+    ],
+    [
+      "2026-08-04",
+      "purchase",
+      "Fuel Products",
+      "Sea Oil Phil. Lubes",
+      1548000,
+      29
+    ],
+    [
+      "2026-08-04",
+      "expense",
+      "Office Supplies",
+      "Office Supplies",
+      18800,
+      30
+    ],
+    [
+      "2026-08-04",
+      "expense",
+      "Office Supplies",
+      "Office Supplies",
+      144700,
+      31
+    ],
+    [
+      "2026-08-04",
+      "expense",
+      "Maintenance",
+      "Shelves Rock Lube wheel rock",
+      850000,
+      32
+    ],
+    [
+      "2026-08-04",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8685100,
+      33
+    ],
+    [
+      "2026-08-05",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7216500,
+      34
+    ],
+    [
+      "2026-08-05",
+      "expense",
+      "Government Fees",
+      "Withholding tax BIR",
+      270000,
+      35
+    ],
+    [
+      "2026-08-06",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8911400,
+      36
+    ],
+    [
+      "2026-08-06",
+      "expense",
+      "Government Fees",
+      "Additional Amendment SEC",
+      350000,
+      37
+    ],
+    [
+      "2026-08-07",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8824100,
+      38
+    ],
+    [
+      "2026-08-08",
+      "expense",
+      "Payroll",
+      "Labor (Ram2 Misperos)",
+      50000,
+      39
+    ],
+    [
+      "2026-08-08",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7756700,
+      40
+    ],
+    [
+      "2026-08-09",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7786400,
+      41
+    ],
+    [
+      "2026-08-09",
+      "expense",
+      "Payroll",
+      "Payroll",
+      2233500,
+      42
+    ],
+    [
+      "2026-08-10",
+      "expense",
+      "Maintenance",
+      "House pump machine",
+      122900,
+      11
+    ],
+    [
+      "2026-08-10",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8424100,
+      12
+    ],
+    [
+      "2026-08-11",
+      "expense",
+      "Office Supplies",
+      "Laptop office supplies",
+      2782900,
+      13
+    ],
+    [
+      "2026-08-11",
+      "expense",
+      "Office Supplies",
+      "Cable wire and USB",
+      86000,
+      14
+    ],
+    [
+      "2026-08-11",
+      "expense",
+      "Office Supplies",
+      "Micro card",
+      186500,
+      15
+    ],
+    [
+      "2026-08-11",
+      "expense",
+      "Office Supplies",
+      "Air inflator (online)",
+      18200,
+      16
+    ],
+    [
+      "2026-08-11",
+      "expense",
+      "Fuel / Transportation",
+      "Gasoline going to Oz",
+      100000,
+      17
+    ],
+    [
+      "2026-08-11",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8850000,
+      18
+    ],
+    [
+      "2026-08-12",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7803600,
+      19
+    ],
+    [
+      "2026-08-12",
+      "expense",
+      "Government Fees",
+      "Inspection / Emission",
+      67200,
+      20
+    ],
+    [
+      "2026-08-12",
+      "expense",
+      "Insurance",
+      "Car insurance",
+      61000,
+      21
+    ],
+    [
+      "2026-08-12",
+      "expense",
+      "Government Fees",
+      "LTO",
+      217906,
+      22
+    ],
+    [
+      "2026-08-13",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8611370,
+      8
+    ],
+    [
+      "2026-08-13",
+      "expense",
+      "Office Supplies",
+      "Laptop setup",
+      100000,
+      43
+    ],
+    [
+      "2026-08-14",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8536700,
+      23
+    ],
+    [
+      "2026-08-14",
+      "expense",
+      "Utilities",
+      "JMEEDO water bill",
+      111875,
+      44
+    ],
+    [
+      "2026-08-15",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8228800,
+      45
+    ],
+    [
+      "2026-08-16",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7578400,
+      46
+    ],
+    [
+      "2026-08-17",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      9216350,
+      47
+    ],
+    [
+      "2026-08-17",
+      "expense",
+      "Payroll",
+      "Payroll",
+      2148180,
+      48
+    ],
+    [
+      "2026-08-17",
+      "expense",
+      "Bank Payments",
+      "Loan payment, Valley Bank",
+      14466667,
+      71
+    ],
+    [
+      "2026-08-18",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7089600,
+      49
+    ],
+    [
+      "2026-08-19",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7703600,
+      50
+    ],
+    [
+      "2026-08-20",
+      "expense",
+      "Fuel / Transportation",
+      "Fuel going to Ozamiz",
+      50000,
+      51
+    ],
+    [
+      "2026-08-20",
+      "expense",
+      "Other Expenses",
+      "Temporary connection",
+      50000,
+      52
+    ],
+    [
+      "2026-08-20",
+      "expense",
+      "Maintenance",
+      "Maintenance, City Hardware",
+      54900,
+      53
+    ],
+    [
+      "2026-08-20",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8643600,
+      54
+    ],
+    [
+      "2026-08-21",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      6890550,
+      55
+    ],
+    [
+      "2026-08-21",
+      "expense",
+      "Payroll",
+      "Payroll",
+      2174229,
+      56
+    ],
+    [
+      "2026-08-22",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8968950,
+      57
+    ],
+    [
+      "2026-08-23",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8537350,
+      58
+    ],
+    [
+      "2026-08-24",
+      "purchase",
+      "Fuel Products",
+      "SeaOil Philippines Inc.",
+      103343340,
+      59
+    ],
+    [
+      "2026-08-24",
+      "expense",
+      "Fuel / Transportation",
+      "Gasoline going to Oz",
+      50000,
+      60
+    ],
+    [
+      "2026-08-24",
+      "expense",
+      "Bank Payments",
+      "Checkbook, BPI",
+      30000,
+      61
+    ],
+    [
+      "2026-08-25",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8043300,
+      62
+    ],
+    [
+      "2026-08-25",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8224000,
+      63
+    ],
+    [
+      "2026-08-26",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      6099200,
+      64
+    ],
+    [
+      "2026-08-26",
+      "expense",
+      "Utilities",
+      "Electric Cooperative",
+      1609285,
+      65
+    ],
+    [
+      "2026-08-27",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8728600,
+      66
+    ],
+    [
+      "2026-08-28",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7515600,
+      67
+    ],
+    [
+      "2026-08-29",
+      "expense",
+      "Fuel / Transportation",
+      "Gas, meeting with Joy Ayop",
+      60000,
+      68
+    ],
+    [
+      "2026-08-29",
+      "expense",
+      "Meals",
+      "Lunch, Rodolfos Cuisine",
+      119322,
+      69
+    ],
+    [
+      "2026-08-29",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      8655300,
+      70
+    ],
+    [
+      "2026-08-30",
+      "sale",
+      "Daily Sales",
+      "Daily sales",
+      7012400,
+      26
+    ]
+  ]
+}
