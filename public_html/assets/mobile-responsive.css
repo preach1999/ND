@@ -2,7 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body, #root { max-width: 100%; min-width: 0; }
 body { overflow-x: hidden; }
-[data-slot="card"] { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; background: transparent !important; background-image: none !important; }
+[data-slot="card"] { border: 0 !important; box-shadow: none !important; }
 img, svg, video, canvas { max-width: 100%; }
 button, input, select, textarea { max-width: 100%; }
 
