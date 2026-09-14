@@ -10,6 +10,10 @@ img, svg, video, canvas { max-width: 100%; }
 button, input, select, textarea { max-width: 100%; }
 
 @media (max-width: 767px) {
+  .mobile-sidebar-close { display:grid; place-items:center; position:absolute; top:.75rem; right:.75rem; z-index:2; width:2rem; height:2rem; border:0; border-radius:.5rem; background:rgba(255,255,255,.08); color:#e2e8f0; font-size:1.5rem; line-height:1; cursor:pointer; transition:background-color 160ms ease,transform 160ms ease; }
+  .mobile-sidebar-close:hover { background:rgba(255,255,255,.16); }
+  .mobile-sidebar-close:active { transform:scale(.92); }
+  [data-slot="sidebar-header"] { position:relative; padding-right:3.25rem !important; }
   header.no-print { min-height: 4rem; height: auto !important; gap: .5rem !important; padding: .5rem .75rem !important; }
   header.no-print > div:first-child { min-width: 0; flex: 1 1 auto; gap: .5rem !important; }
   header.no-print > div:first-child > div:last-child { min-width: 0; }
