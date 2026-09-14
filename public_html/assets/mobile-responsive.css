@@ -1,0 +1,28 @@
+/* Shared mobile layout safeguards for every application screen. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { max-width: 100%; min-width: 0; }
+body { overflow-x: hidden; }
+[data-slot="card"] { border: 0 !important; box-shadow: none !important; }
+img, svg, video, canvas { max-width: 100%; }
+button, input, select, textarea { max-width: 100%; }
+
+@media (max-width: 767px) {
+  header.no-print { min-height: 4rem; height: auto !important; gap: .5rem !important; padding: .5rem .75rem !important; }
+  header.no-print > div:first-child { min-width: 0; flex: 1 1 auto; gap: .5rem !important; }
+  header.no-print > div:first-child > div:last-child { min-width: 0; }
+  header.no-print > div:first-child > div:last-child p:first-child { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .75rem; }
+  header.no-print > div:last-child { flex: 0 0 auto; min-width: 0; gap: .35rem !important; }
+  header.no-print [role="combobox"] { width: clamp(7rem, 34vw, 9.25rem) !important; min-width: 0 !important; padding-left: .5rem !important; padding-right: .5rem !important; overflow: hidden; }
+  header.no-print [role="combobox"] > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  header.no-print button[aria-label="Record transaction"] { flex: 0 0 2.25rem; }
+  main { min-width: 0 !important; width: 100% !important; padding: 1rem !important; }
+  [data-sidebar="sidebar"] { max-width: 85vw; }
+  [role="dialog"] { width: calc(100vw - 1rem) !important; max-width: calc(100vw - 1rem) !important; max-height: calc(100vh - 1rem) !important; margin: .5rem !important; }
+  [role="dialog"] > div { max-width: 100%; }
+  table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  th, td { white-space: nowrap; }
+  input, select, textarea { min-width: 0; }
+  textarea { width: 100%; }
+  h1 { overflow-wrap: anywhere; }
+  .recharts-responsive-container { min-width: 0 !important; }
+}
