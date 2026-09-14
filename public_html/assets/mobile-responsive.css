@@ -34,6 +34,15 @@ body { overflow-x: hidden; }
 .annual-table-card table { width:100%; border-collapse:collapse; font-size:.8rem; }
 .annual-table-card th, .annual-table-card td { padding:.7rem .5rem; border-bottom:1px solid #e2e8f0; text-align:right; white-space:nowrap; }
 .annual-table-card th:first-child, .annual-table-card td:first-child { text-align:left; }
+.annual-report-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:1.25rem; }
+.annual-profit-card { border-radius:12px; background:#fff; padding:1.25rem; }
+.annual-profit-card h2 { margin:0 0 1rem; font-size:1rem; font-weight:600; }
+.annual-summary-row, .annual-summary-total { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem .6rem; }
+.annual-summary-row { color:#475569; font-size:.875rem; }
+.annual-summary-row strong { font-weight:700; }
+.annual-positive { color:#047857; } .annual-negative { color:#e11d48; }
+.annual-summary-total { margin-top:.4rem; border-radius:12px; background:#020617; color:#fff; font-weight:700; }
+.annual-export { min-height:2.25rem; border:0; border-radius:8px; background:#0f172a; padding:.4rem .75rem; color:#fff; font-size:.8rem; font-weight:600; cursor:pointer; }
 .annual-report-dialog th, .annual-report-dialog td { padding: .65rem .5rem; border-bottom: 1px solid #e2e8f0; text-align: right; white-space: nowrap; }
 .annual-report-dialog th:first-child, .annual-report-dialog td:first-child { text-align: left; }
 @media (max-width: 767px) { .annual-report-dialog { padding: 1rem; } .annual-report-summary { grid-template-columns: repeat(2, 1fr); } .annual-page-header { align-items:stretch; flex-direction:column; } .annual-controls { flex-wrap:wrap; } .annual-cards { grid-template-columns:repeat(2,1fr); gap:.5rem; } .annual-cards article { padding:.85rem; } }
