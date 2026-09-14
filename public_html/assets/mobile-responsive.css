@@ -10,6 +10,10 @@ img, svg, video, canvas { max-width: 100%; }
 button, input, select, textarea { max-width: 100%; }
 
 @media (max-width: 767px) {
+  [data-slot="sidebar"][data-mobile="true"] { transition: opacity 180ms ease, transform 220ms cubic-bezier(.22,1,.36,1); }
+  [data-slot="sidebar"][data-mobile="true"] [data-slot="sidebar-menu-button"] { transition: background-color 160ms ease, color 160ms ease, transform 160ms ease; }
+  [data-slot="sidebar"][data-mobile="true"] [data-slot="sidebar-menu-button"]:active { transform: scale(.985); }
+  [data-slot="sidebar"][data-mobile="true"] ~ [data-slot="dialog-overlay"] { transition: opacity 180ms ease; }
   .mobile-sidebar-close { display:grid; place-items:center; position:absolute; top:.75rem; right:.75rem; z-index:2; width:2rem; height:2rem; border:0; border-radius:.5rem; background:rgba(255,255,255,.08); color:#e2e8f0; font-size:1.5rem; line-height:1; cursor:pointer; transition:background-color 160ms ease,transform 160ms ease; }
   .mobile-sidebar-close:hover { background:rgba(255,255,255,.16); }
   .mobile-sidebar-close:active { transform:scale(.92); }
