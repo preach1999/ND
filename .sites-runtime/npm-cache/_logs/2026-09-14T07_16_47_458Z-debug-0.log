@@ -10,3 +10,6 @@
 9 verbose logfile logs-max:10 dir:D:\ND-Financial-System\ND\.sites-runtime\npm-cache\_logs\2026-09-14T07_16_47_458Z-
 10 verbose logfile D:\ND-Financial-System\ND\.sites-runtime\npm-cache\_logs\2026-09-14T07_16_47_458Z-debug-0.log
 11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 http fetch GET 200 https://registry.npmjs.org/hostinger-api-mcp 803ms (cache miss)
+14 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736

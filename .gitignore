@@ -1,1 +1,4 @@
 app_config/config.php
+.sites-runtime/
+*.log
+ND DB password ND-Financial-System2.txt

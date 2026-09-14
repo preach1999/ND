@@ -12,7 +12,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,7 +35,7 @@ jobs:
           target: "/home/u446223237/domains/nd.sysdevt.online"
           overwrite: true
 
-      - name: Deploy non-secret app files
+      - name: Deploy non-secret application files
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOSTINGER_HOST }}
