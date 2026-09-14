@@ -3,6 +3,9 @@
 html, body, #root { max-width: 100%; min-width: 0; }
 body { overflow-x: hidden; }
 [data-slot="card"] { border: 0 !important; border-radius: 8px !important; box-shadow: none !important; }
+[data-slot="sidebar-trigger"] svg { transform: rotate(0deg); transition: transform 180ms ease, opacity 180ms ease; }
+[data-state="collapsed"] [data-slot="sidebar-trigger"] svg { transform: rotate(180deg); }
+[data-slot="sidebar-trigger"]:active svg { opacity: .65; transform: scale(.9); }
 img, svg, video, canvas { max-width: 100%; }
 button, input, select, textarea { max-width: 100%; }
 
