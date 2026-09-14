@@ -32,8 +32,12 @@ jobs:
           password: ${{ secrets.HOSTINGER_PASSWORD }}
           port: ${{ secrets.HOSTINGER_PORT }}
           source: "public_html/*,public_html/.htaccess"
-          target: "/home/u446223237/domains/nd.sysdevt.online"
+          # Hostinger serves this domain from the nested public_html directory.
+          # Deploy the contents of the repository's public_html folder there,
+          # rather than creating public_html/public_html.
+          target: "/home/u446223237/domains/nd.sysdevt.online/public_html"
           overwrite: true
+          strip_components: 1
 
       - name: Deploy non-secret application files
         uses: appleboy/scp-action@v0.1.7
