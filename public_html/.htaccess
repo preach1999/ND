@@ -1,5 +1,12 @@
 RewriteEngine On
 
+# Always revalidate the application shell and API responses after a deployment.
+<IfModule mod_headers.c>
+  <FilesMatch "^(index\.html|index\.php)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+</IfModule>
+
 # Serve real files and directories (including /api and /assets) normally.
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
