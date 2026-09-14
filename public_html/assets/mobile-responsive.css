@@ -2,7 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body, #root { max-width: 100%; min-width: 0; }
 body { overflow-x: hidden; }
-[data-slot="card"] { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+[data-slot="card"] { border: 0 !important; border-radius: 8px !important; box-shadow: none !important; }
 img, svg, video, canvas { max-width: 100%; }
 button, input, select, textarea { max-width: 100%; }
 
@@ -25,4 +25,8 @@ button, input, select, textarea { max-width: 100%; }
   textarea { width: 100%; }
   h1 { overflow-wrap: anywhere; }
   .recharts-responsive-container { min-width: 0 !important; }
+}
+
+@media (min-width: 768px) {
+  [data-slot="card"] { border-radius: 12px !important; }
 }
