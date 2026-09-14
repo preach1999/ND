@@ -28,8 +28,33 @@
     var button = exportButton.cloneNode(true);
     button.className += ' annual-report-button';
     button.textContent = 'Annual report';
-    button.addEventListener('click', showAnnualReport);
+    button.addEventListener('click', renderAnnualReport);
     exportButton.parentNode.insertBefore(button, exportButton);
+  }
+
+  async function renderAnnualReport(requestedYear) {
+    var main = document.querySelector('main');
+    if (!main) return;
+    var year = requestedYear || String(new Date().getFullYear());
+    var yearMatch = document.body.innerText.match(/\b(20\d{2}) report\b/i);
+    if (yearMatch && !requestedYear) year = yearMatch[1];
+    var load = async function (selectedYear) {
+      var rows = (await Promise.all(Array.from({ length: 12 }, function (_, index) {
+        var month = String(index + 1).padStart(2, '0');
+        return fetch('/api/finance.php?period=' + selectedYear + '-' + month, { cache: 'no-store' }).then(function (response) { return response.ok ? response.json() : null; }).catch(function () { return null; });
+      }))).filter(Boolean);
+      var totals = rows.reduce(function (sum, item) { sum.sales += item.summary.salesCentavos || 0; sum.purchases += item.summary.purchasesCentavos || 0; sum.expenses += item.summary.expensesCentavos || 0; sum.net += item.summary.netChangeCentavos || 0; return sum; }, { sales: 0, purchases: 0, expenses: 0, net: 0 });
+      var money = function (value) { return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value / 100); };
+      main.innerHTML = '<section class="annual-page"><div class="annual-page-header"><div><p class="annual-eyebrow">Financial report</p><h1>' + selectedYear + ' annual report</h1><p class="annual-description">Profitability and cash position across the selected year.</p></div><div class="annual-controls"><label for="annual-year">Year</label><select id="annual-year"><option>' + selectedYear + '</option><option>' + (Number(selectedYear) - 1) + '</option><option>' + (Number(selectedYear) + 1) + '</option></select><button type="button" class="annual-back">Back to monthly report</button></div></div><div class="annual-cards"><article><span>Sales</span><strong>' + money(totals.sales) + '</strong></article><article><span>Purchases</span><strong>' + money(totals.purchases) + '</strong></article><article><span>Operating expenses</span><strong>' + money(totals.expenses) + '</strong></article><article class="annual-total"><span>Net income</span><strong>' + money(totals.net) + '</strong></article></div><section class="annual-table-card"><h2>Monthly performance</h2><p>Totals from active transactions only</p><div class="annual-table-wrap"><table><thead><tr><th>Month</th><th>Sales</th><th>Purchases</th><th>Expenses</th><th>Net income</th></tr></thead><tbody>' + rows.map(function (item) { return '<tr><td>' + item.period.label + '</td><td>' + money(item.summary.salesCentavos) + '</td><td>' + money(item.summary.purchasesCentavos) + '</td><td>' + money(item.summary.expensesCentavos) + '</td><td>' + money(item.summary.netChangeCentavos) + '</td></tr>'; }).join('') + '</tbody></table></div></section></section>';
+      main.querySelector('#annual-year').addEventListener('change', function (event) { renderAnnualReportYear(event.target.value); });
+      main.querySelector('.annual-back').addEventListener('click', function () { window.location.reload(); });
+    };
+    window.renderAnnualReportYear = load;
+    await load(year);
+  }
+
+  async function renderAnnualReportYear(year) {
+    await renderAnnualReport(year);
   }
 
   async function showAnnualReport() {
