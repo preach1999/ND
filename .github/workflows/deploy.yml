@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.HOSTINGER_USERNAME }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
           port: ${{ secrets.HOSTINGER_PORT }}
-          source: "public_html/*"
+          source: "public_html/*,public_html/.htaccess"
           target: "/home/u446223237/domains/nd.sysdevt.online"
           overwrite: true
 
