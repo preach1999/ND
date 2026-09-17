@@ -151,9 +151,7 @@ function allRows(PDOStatement $statement): array {
 
 function calculatedOpeningBalance(PDO $pdo, string $period): int {
     $firstPeriod = $pdo->query('SELECT period_key,opening_balance_centavos FROM monthly_periods ORDER BY period_key ASC LIMIT 1')->fetch();
-    if (!$firstPeriod || $period < (string)$firstPeriod['period_key']) {
-        throw new RuntimeException('The selected month is earlier than the first available financial period.');
-    }
+    $baseOpening = $firstPeriod ? (int)$firstPeriod['opening_balance_centavos'] : OPENING_BALANCE_CENTAVOS;
 
     $query = $pdo->prepare("SELECT
         COALESCE(SUM(CASE WHEN type='sale' THEN amount_centavos ELSE 0 END),0) sales,
@@ -161,7 +159,7 @@ function calculatedOpeningBalance(PDO $pdo, string $period): int {
         FROM transactions WHERE transaction_date<? AND status='active'");
     $query->execute([$period . '-01']);
     $totals = $query->fetch() ?: ['sales'=>0,'outflows'=>0];
-    return (int)$firstPeriod['opening_balance_centavos'] + (int)$totals['sales'] - (int)$totals['outflows'];
+    return $baseOpening + (int)$totals['sales'] - (int)$totals['outflows'];
 }
 
 function snapshot(PDO $pdo, string $period, array $configuration): array {
